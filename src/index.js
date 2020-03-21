@@ -6,6 +6,7 @@ module.exports = function toReadable (number) {
         'seventeen', 'eighteen', 'nineteen'];
     const tw = ['twenty', 'thirty', 'forty', 'fifty',
         'sixty', 'seventy', 'eighty', 'ninety'];
+    if (number===0) return 'zero';
     number = number.toString();
     number = number.replace(/[, ]/g, '');
     if (number != parseFloat(number)) return 'not a number';
@@ -46,5 +47,5 @@ module.exports = function toReadable (number) {
             str.replace(/\s+/g, ' ');
         }
     }
-    return str;
+    return str.trim();
 };
